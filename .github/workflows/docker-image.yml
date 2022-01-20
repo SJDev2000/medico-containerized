@@ -15,15 +15,8 @@ jobs:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: medico
-      POSTGRES_PORT: 5432
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker stack
-      run: docker-compose up -d
-
-    - name: Check running containers
-      run: docker ps
-      
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
       
