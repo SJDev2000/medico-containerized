@@ -7,6 +7,10 @@ services:
       - 5000:5000
     networks:
       - flask_network
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=medico
 
   db:
     image: postgres:13
