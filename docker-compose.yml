@@ -5,6 +5,7 @@ services:
     restart: always
     ports:
       - 5000:5000
+    target: flask
     networks:
       - flask_network
 
@@ -19,6 +20,7 @@ services:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=medico
+    target: postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data
 networks:
