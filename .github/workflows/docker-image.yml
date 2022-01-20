@@ -23,6 +23,10 @@ jobs:
 
     - name: Check running containers
       run: docker ps
+      
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      
     - uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: saiyam611/medico
