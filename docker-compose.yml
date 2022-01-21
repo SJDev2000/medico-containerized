@@ -11,6 +11,14 @@ services:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=medico
+  
+  proxy:
+    build: proxy
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - flask_network
 
   db:
     image: postgres:13
